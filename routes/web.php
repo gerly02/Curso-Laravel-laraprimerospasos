@@ -14,9 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Primer ejemplo 
+
+// Route::get('/bienvenido', function () {
+//     echo "<h1>Hola mundo</h1>";
+//     return view('welcome');
+
+// });
+
+// Segundo ejemplo 
+
+// Route::get('/', function () {
+//     return "raiz";
+
+// });
+
+Route::get('/custom', function () {
+    return view('custom');
+
 });
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
