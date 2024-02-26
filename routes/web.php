@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,17 +42,20 @@ use Illuminate\Support\Facades\Route;
 
 // cuarto ejemplo: Reto crear una view llamada contacto 
 
-Route::get('/contacto', function () {
-    return view('contacto');
-    // return view('contacto');
+// Route::get('/contacto', function () {
+//     return view('contacto');
+//     // return view('contacto');
 
-}) -> name('contacto');
+// }) -> name('contacto');
 
-Route::get('/first', function () {
-    return view('first');
+// Route::get('/first', function () {
+//     return view('first');
 
-});
+// });
 
+// Quinto ejemplo 
+
+// Route::get('/', [TestController::class, 'test']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
