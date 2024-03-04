@@ -14,10 +14,17 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
+        // $post = Post::all();
 
-        echo "$post";
+        // echo "$post";
 
+        return response()->json(Post::paginate(10));
+
+    }
+
+    public function all()
+    {
+        return response() ->json(Post::get(10));
     }
 
 
@@ -34,7 +41,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json(Post::create($request->validate()));
     }
 
     /**
