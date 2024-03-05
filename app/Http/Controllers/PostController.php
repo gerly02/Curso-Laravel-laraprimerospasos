@@ -22,11 +22,6 @@ class PostController extends Controller
 
     }
 
-    public function all()
-    {
-        return response() ->json(Post::get(10));
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -75,4 +70,14 @@ class PostController extends Controller
     {
         //
     }
+
+
+    // Creacion de función clase 139
+    public function all()
+    {
+        return response()->json(Post::get());
+    }
+
+
+
 }

@@ -7,6 +7,8 @@ use App\Http\Requests\Category\PutRequest;
 use App\Http\Requests\Category\StoreRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Post;
+
 
 class CategoryController extends Controller
 {
@@ -40,5 +42,23 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+    }
+    
+    // Clase 139
+    public function all(){
+        return response()->json(Category::get());
+    }
+
+    // Creación de función Clase 140 
+    public function posts(Category $category){
+        // $posts=Post::join('categories', "categories.id", "=", "posts.id")
+        // ->select("posts.*", "categories.Nombre as category")
+        // ->where ("categories.id", $category->id)
+        // ->get();
+
+        $posts = Post::with("category")
+        ->where("category_id", $category->id)
+        ->get();
+        return response()->json($posts);
     }
 }
